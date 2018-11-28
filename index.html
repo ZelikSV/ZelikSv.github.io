@@ -463,11 +463,11 @@
           </div>
           <form action="#" class="form-send clearfix">
             <label>
-              <input type="text" name="name" />
+              <input type="text" name="name" required pattern="[A-Za-z0-9]{4,12}" autocomplete="off" />
               <p>Your Name<span>*</span></p>
             </label>
             <label>
-              <input type="text" name="email"/>
+              <input type="email" name="email" autocomplete="off" />
               <p>Your Email<span>*</span></p>
             </label>
             <label class="comment-wrapper">
