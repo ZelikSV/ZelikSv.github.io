@@ -50,7 +50,7 @@ button{
   cursor: pointer;
 }
 .search-btn{
-  line-height: 24px;
+  line-height: 30px;
   border-radius: 0 6px 6px 0;
   border: none;
   margin-right: 0;
@@ -154,17 +154,22 @@ function checkedChild(selector) {
     btnChild.setAttribute("disabled", "disabled");
   } else {
     btnChild.removeAttribute("disabled");
-  }
+  };
   if (!document.querySelector(selector).nextElementSibling) {
     btnNext.setAttribute("disabled", "disabled");
   } else {
     btnNext.removeAttribute("disabled");
-  }
+  };
   if (!document.querySelector(selector).previousElementSibling) {
     btnPrev.setAttribute("disabled", "disabled");
   } else {
     btnPrev.removeAttribute("disabled");
-  }
+  };
+  if (!document.querySelector(selector).parentNode) {
+    btnParent.setAttribute("disabled", "disabled");
+  } else {
+    btnParent.removeAttribute("disabled");
+  };
 }
 
 input.addEventListener("input", function() {
@@ -176,7 +181,7 @@ btnSearch.addEventListener("click", function() {
     document.querySelector(".checked").classList.remove("checked");
     document.querySelector(inputField).classList.add("checked");
     input.value = "";
-    checkedChild(".checked");
+    checkedChild(inputField);
   } else {
     document.querySelector(inputField).classList.add("checked");
     input.value = "";
