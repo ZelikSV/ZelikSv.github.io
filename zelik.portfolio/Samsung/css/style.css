@@ -1,0 +1,401 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ===================preloder================== */
+
+.preloader {
+    position: absolute;
+    background: #fff;
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    line-height: 220px;
+}
+
+.spam-banner.done .preloader {
+    opacity: 0;
+}
+
+.spam-banner .left-content {
+    transform: scale(0);
+    transition: all .3s linear;
+}
+
+.spam-banner.done .left-content {
+    transform: scale(1);
+}
+
+.spam-banner .right-content p {
+    transform: scale(0);
+    transition: all .5s 1s linear;
+}
+
+.spam-banner.done .right-content p {
+    transform: scale(1);
+    font-size: .8rem;
+}
+
+.spam-banner .right-content a {
+    transform: scale(0);
+    transition: all .5s .1s linear;
+}
+
+.spam-banner.done .right-content a {
+    transform: scale(1);
+}
+
+.container-slide {
+    transform: translateY(150%);
+    transition: all 1s linear;
+}
+
+.spam-banner.done .container-slide {
+    transform: translateY(0%);
+}
+
+.slide {
+    display: none;
+}
+
+.spam-banner.done .slide {
+    display: block;
+}
+
+.spam-baner .range {
+    transform: rotate(90deg) scale(0);
+    transition: all .5s linear;
+}
+
+.spam-banner.done .range {
+    transform: rotate(90deg) scale(1);
+}
+
+
+/* ====================spam-baner======================= */
+
+.spam-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 970px;
+    min-height: 250px;
+    border: 1px solid #000;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.left-content {
+    width: 275px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left-content :nth-child(1) {
+    height: 14px;
+}
+
+.left-slide :nth-child(1) {
+    opacity: 1;
+}
+
+.left-slide {
+    position: relative;
+    width: 100%;
+    min-height: 15px;
+    margin-top: 80px;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 0.5s linear;
+}
+/* =====================telephone================= */
+
+.spam-banner.done .slide {
+    background: url(../img/phone_sprite.png) no-repeat;
+    background-position: -30px 0px;
+    width: 500px;
+    min-height: 220px;
+    position: relative;
+}
+
+.video {
+    top: 9px;
+    left: 47px;
+    width: 363px;
+    height: 204px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+
+.sidepiece {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sidepiece:before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 47px;
+    width: 392px;
+    height: 216px;
+    background: url(../img/highlights.png) no-repeat 64% 50%/cover;
+    background-size: 980px;
+}
+
+.slide>div {
+    position: absolute;
+    pointer-events: none;
+}
+
+.flash {
+    display: none;
+    background: url(../img/flash.png) no-repeat 50% 50%;
+    background-size: 225px;
+    top: -25%;
+    width: 50%;
+    height: 100%;
+    left: -11%;
+    transform: scale(0);
+    animation: flash .3s linear;
+}
+
+.card {
+    display: none;
+    background: url(../img/card.png) no-repeat 50% 50%;
+    top: 0%;
+    width: 99%;
+    height: 100%;
+    left: -5%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.flash-card {
+    display: none;
+    background: url(../img/card_highlight.png) 50% 50%;
+    top: 65%;
+    width: 16%;
+    height: 34%;
+    left: 17%;
+    transform: rotate(-45deg) translate(-50%, -67%) scale(0);
+    animation: card .3s linear .5s, card .3s linear .1s;
+}
+
+
+/* =======================rain=================== */
+
+.slide .rain {
+    position: relative;
+    width: 90%;
+    height: 220px;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.drop {
+    transform: translateY(0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.drop-1 {
+    background: url(../img/raindrop_1.png) no-repeat;
+   
+}
+
+.drop-2 {
+    background: url(../img/raindrop_2.png) no-repeat;
+}
+
+.drop-3 {
+    background: url(../img/raindrop_3.png) no-repeat;
+}
+
+.drop-4 {
+    background: url(../img/raindrop_4.png) no-repeat;
+}
+
+.show {
+    opacity: 1;
+}
+
+.drop-size-1 {
+    background-size: 25px;
+     transition: background-size .6s ease;
+}
+
+.drop-size-2 {
+    background-size: 2px;
+}
+
+.drop-size-3 {
+    background-size: 18px;
+
+}
+
+.drop-size-4 {
+    background-size: 9px;
+}
+
+.drop-size-5 {
+    background-size: 5px;
+
+}
+
+.down-1 {
+    transform: scaleX(.3) translateY(260%);
+    transition: transform 8.7s ease-in-out;
+}
+
+.down-2 {
+    transform: scaleX(.5) translateY(430%);
+    transition: transform 9.8s cubic-bezier(.53, .06, .52, .13);
+}
+
+.down-3 {
+    transform: scaleX(.8) translateY(480%);
+    transition: transform 9.2s cubic-bezier(.01, .7, .36, 0);
+}
+
+.down-4 {
+    transform: scaleX(.4) translateY(280%);
+    transition: transform 8.5s cubic-bezier(.01, .7, .36, 0);
+}
+
+.down-5 {
+    transform: scaleX(.9) translateY(350%);
+    transition: transform 6.1s cubic-bezier(.01, .7, .36, 0);
+}
+
+.hideDrops1{
+    opacity: .5;
+}
+.hideDrops2{
+    opacity: .5;
+}
+/* ============================================= */
+
+.right-content {
+    width: 200px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn-buy {
+    background: #5b5a5a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    font-size: 14px;
+    z-index: 99999999;
+}
+
+.close span {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.range {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    right: -18%;
+    z-index: 10;
+    border-radius: 2px;
+    width: 200px;
+    height: 1px;
+    background: #ccc;
+    outline: none;
+    transform: rotate(90deg) scale(0);
+}
+
+.range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+}
+
+@keyframes card {
+    0% {
+        transform: rotate(-45deg) translate(-50%, -67%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(-45deg) translate(-25%, -60%) scale(0.6);
+    }
+    85% {
+        opacity: 0;
+        transform: rotate(-45deg) translate(5%, -60%) scale(0.3);
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(-45deg) translate(10%, -60%) scale(0);
+    }
+}
+
+@keyframes flash {
+    0% {
+        transform: scale(0) rotate(0);
+    }
+    50% {
+        transform: scale(2) rotate(180deg);
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3) rotate(360deg);
+        opacity: 0;
+    }
+}

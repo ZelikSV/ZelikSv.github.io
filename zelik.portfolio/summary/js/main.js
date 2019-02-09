@@ -1,0 +1,1 @@
+"use strict";window.onload=function(){$(document).ready(function(){$("select").selecter()}),$(".selecter-selected").addClass("fa fa-chevron-down"),$("[href^='#']").click(function(){var e=$(this).attr("href");return $("html, body").animate({scrollTop:$(e).offset().top-20+"px"}),!1})};

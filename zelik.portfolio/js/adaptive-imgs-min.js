@@ -1,0 +1,2 @@
+function d(b){for(var a,e,f=document.getElementsByClassName("bg-a"),k=document.getElementsByClassName("img-a"),g=0,c;c=f[g];g++)a=getComputedStyle(c).backgroundImage,e=a.slice(-6),a=a.slice(0,-8),c.style.backgroundImage=a+b+e;for(f=0;c=k[f];f++)a=c.getAttribute("src"),e=a.slice(-4),a=a.slice(0,-6),c.setAttribute("src",a+b+e)}function h(){var b=window.innerWidth;575>=b?d("xs"):767>=b?d("sm"):991>=b?d("md"):1199>=b?d("lg"):d("xl")}document.addEventListener("DOMContentLoaded",h);
+window.addEventListener("resize",h);
