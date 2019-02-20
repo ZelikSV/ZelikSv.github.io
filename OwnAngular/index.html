@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Angular</title>
+</head>
+
+<body >
+  <div class="my-app" ng-app ng-init="test=false; name='ivan'">
+    <div>
+      <p ng-show="test === false" ng-uppercase>Hello my name is Ivan</p>
+      <p ng-hide="test === false">Hello my name is Anatolia</p>
+    </div>
+      <input ng-model="name"/>
+      <input ng-model="name"/>
+      <p>This is long string
+        <span ng-make-short length="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et modi ut sequi minima? Dolore repellat eaque blanditiis tempora obcaecati totam?</span>
+      </p>
+      <p>This is your value: 
+        <span ng-bind="name"></span>
+      </p>
+      <ul>
+        <li ng-repeat="letter in name"></li>
+      </ul>
+      <button ng-click="test = !test">Change title</button>
+      <button ng-random-color>Change my color</button>
+  </div>
+<script type="text/javascript" src="index.js"></script></body>
+
+</html>
