@@ -4,139 +4,124 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="description" content="" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <link rel="stylesheet" href="css/style.css" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700 | Abril+Fatface rel="stylesheet">
+      <link rel="stylesheet" href="css/style.css">
       <title>Converter</title>
     </head>
-
     <body ng-app="myApp">
-      <div class="app-wrapper" ng-controller="myController">
+      <div class="app-wrapper" ng-controller="myController as mc">
         <h1 class="app-title">Currency converter</h1>
         <div class="app-content">
           <ul class="tab-label">
             <li
               class="active"
-              ng-class="{'active':activeTab}"
-              ng-click="activeTab=true; changeValues()"
+              ng-class="{'active':mc.activeTab}"
+              ng-click="mc.activeTab=true"
             >
               sell
             </li>
             <li
-              ng-click="activeTab=false; changeValues()"
-              ng-class="{'active':!activeTab}"
+              ng-click="mc.activeTab=false"
+              ng-class="{'active':!mc.activeTab}"
             >
               buy
             </li>
           </ul>
           <div class="tabs-content">
-            <div ng-show="activeTab === true" class="tabs-content-sell">
+            <div ng-show="mc.activeTab === true" class="tabs-content-sell">
               <div class="currency-line">
                 <label>
-                  <p>We give</p>
+                  <p>give back</p>
                   <select
                     name="currency-sell"
-                    ng-model="currencyFrom"
-                    ng-click="convertValue()"
+                    ng-model="mc.currencyFrom"
+                    ng-click="mc.convertValue()"
+                    ng-options='item.ccy as item.ccy for item in mc.currency | currencyFilter: mc.currencyTo'
                   >
-                    <option ng-repeat="item in currency">{{ item.ccy }}</option>
                   </select>
                 </label>
-                <button ng-click="changeValues($event)">&#8660;</button>
+                <button ng-click="mc.changeValues($event)">&#8660;</button>
                 <label>
-                  <p>We take</p>
+                  <p>we get</p>
                   <select
                     name="currency-buy"
-                    ng-model="currencyTo"
-                    ng-click="convertValue()"
+                    ng-model="mc.currencyTo"
+                    ng-click="mc.convertValue()"
+                    ng-options='item.ccy as item.ccy for item in mc.currency | currencyFilter: mc.currencyFrom'
                   >
-                    <option ng-repeat="item in currency">{{ item.ccy }}</option>
                   </select>
                 </label>
               </div>
               <div class="counter-line">
                 <label>
-                  <p>How much we want sell</p>
+                  <p>How much to exchange</p>
                   <input
                     type="number"
                     min="0"
-                    ng-model="countVal"
-                    ng-change="convertValue($event)"
+                    ng-model="mc.countVal"
+                    ng-change="mc.convertValue($event)"
                   />
                 </label>
-                <span>or</span>
                 <label>
-                  <p>How much we want buy</p>
-                  <input type="number" min="0" ng-model="costVal" />
+                  <p>How much will we get</p>
+                  <input type="number" readonly ng-model="mc.costVal" />
                 </label>
               </div>
               <div class="bottom-btns-wrap">
-                <select name="commission" ng-click="addCommissions($event)">
-                  <option value="0">Commission 0%</option>
-                  <option value="1">Commission 1%</option>
-                  <option value="2">Commission 2%</option>
-                  <option value="3">Commission 3%</option>
-                  <option value="4">Commission 4%</option>
+                <select name="commission" ng-click="mc.addCommissions($event)">
+                  <option ng-repeat='item in mc.percentageTax' value={{item}}>Commission {{item}}%</option>
                 </select>
                 <select name="city">
-                  <option value="Dnipro">Dnipro</option>
-                  <option value="Kiev">Kiev</option>
-                  <option value="Kharkiv">Kharkiv</option>
-                  <option value="Lviv">Lviv</option>
+                  <option ng-repeat='item in mc.citiesLocation' value={{item}}>{{item}}</option>
                 </select>
               </div>
             </div>
-            <div ng-show="activeTab === false" class="tabs-content-buy">
+            <div ng-show="mc.activeTab === false" class="tabs-content-buy">
               <div class="currency-line">
                 <label>
-                  <p>We give</p>
+                  <p>give back</p>
                   <select
                     name="currency-sell"
-                    ng-model="currencyFrom"
-                    ng-click="convertValue()"
+                    ng-model="mc.currencyFrom"
+                    ng-click="mc.convertValue()"
+                    ng-options='item.ccy as item.ccy for item in mc.currency | currencyFilter: mc.currencyTo'
                   >
-                    <option ng-repeat="item in currency">{{ item.ccy }}</option>
                   </select>
                 </label>
-                <button ng-click="changeValues($event)">&#8660;</button>
+                <button ng-click="mc.changeValues($event)">&#8660;</button>
                 <label>
-                  <p>We take</p>
+                  <p>we get</p>
                   <select
                     name="currency-buy"
-                    ng-model="currencyTo"
-                    ng-click="convertValue()"
+                    ng-model="mc.currencyTo"
+                    ng-click="mc.convertValue()"
+                    ng-options='item.ccy as item.ccy for item in mc.currency | currencyFilter: mc.currencyFrom'
                   >
-                    <option ng-repeat="item in currency">{{ item.ccy }}</option>
                   </select>
                 </label>
               </div>
               <div class="counter-line">
                 <label>
-                  <p>How much we want sell</p>
+                  <p>How much to exchange</p>
                   <input
                     type="number"
                     min="0"
-                    ng-model="countVal"
-                    ng-change="convertValue($event)"
+                    ng-model="mc.countVal"
+                    ng-change="mc.convertValue($event)"
                   />
                 </label>
-                <span>or</span>
                 <label>
-                  <p>How much we want buy</p>
-                  <input type="number" min="0" ng-model="costVal" />
+                  <p>How much will we get
+                  </p>
+                  <input type="number" readonly ng-model="mc.costVal" />
                 </label>
               </div>
               <div class="bottom-btns-wrap">
-                <select name="commission" ng-click="addCommissions($event)">
-                  <option value="0">Commission 0%</option>
-                  <option value="1">Commission 1%</option>
-                  <option value="2">Commission 2%</option>
-                  <option value="3">Commission 3%</option>
-                  <option value="4">Commission 4%</option>
+                <select name="commission" ng-click="mc.addCommissions($event)">
+                  <option ng-repeat='item in mc.percentageTax' value={{item}}>Commission {{item}}%</option>
                 </select>
                 <select name="city">
-                  <option value="Dnipro">Dnipro</option>
-                  <option value="Kiev">Kiev</option>
-                  <option value="Kharkiv">Kharkiv</option>
-                  <option value="Lviv">Lviv</option>
+                  <option ng-repeat='item in mc.citiesLocation' value={{item}} >{{item}}</option>
                 </select>
               </div>
             </div>
