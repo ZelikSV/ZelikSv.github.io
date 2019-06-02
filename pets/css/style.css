@@ -906,7 +906,8 @@ body {
   .btn-mobile-top {
     display: block; }
   .clew-cat,
-  .form-cat {
+  .form-cat,
+  .hand-cat-form {
     display: none; }
   .form-container {
     width: 100%; }
@@ -959,6 +960,9 @@ body {
   .question-icon:hover .message-window {
     transform: translate(-45%, 0) scale(1);
     left: 0; }
+  .question-icon:hover .message-window.long-item {
+    transform: translate(-65%, 0) scale(1);
+    left: 0; }
   .subscription-card-item svg {
     min-width: 13px; }
   .btn-top-wrap {
@@ -984,7 +988,9 @@ body {
     .mobile-header-btn svg {
       width: 21px; }
   .img-part-benefits svg {
-    transform: scale(1.4); } }
+    transform: scale(1.4); }
+  .question-icon:hover .message-window.long-item {
+    transform: translate(-82%, 0) scale(1); } }
 
 @media only screen and (max-width: 322px) {
   .logo svg {
