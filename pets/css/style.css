@@ -238,7 +238,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 1%);
   cursor: pointer;
   animation: mobileBtn 0.7s linear infinite; }
 
@@ -554,6 +554,8 @@ body {
     height: 50px;
     position: relative;
     margin-bottom: 10px;
+    background: #FAFAFA;
+    border-radius: 4px 4px 0px 0px;
     border: 1px solid #eaeaea;
     /* Firefox 19+ */
     /* Firefox 18- */
@@ -942,7 +944,12 @@ body {
     margin-left: 0px; }
   .question-icon:hover .message-window {
     transform: translate(-45%, 0) scale(1);
-    left: 0; } }
+    left: 0; }
+  .subscription-card-item svg {
+    min-width: 13px; }
+  .btn-top-wrap {
+    bottom: 50px;
+    right: 15px; } }
 
 @media only screen and (max-width: 450px) {
   .banner-bg {
@@ -952,7 +959,28 @@ body {
     height: 155px; }
   .footer {
     padding: 20px 15px;
-    align-items: center; } }
+    align-items: center; }
+  .modal-window.show .popup-wrap {
+    height: 580px; } }
+
+@media only screen and (max-width: 375px) {
+  .mobile-header-btn {
+    width: 35px;
+    height: 32px; }
+    .mobile-header-btn svg {
+      width: 21px; }
+  .img-part-benefits svg {
+    transform: scale(1.4); } }
+
+@media only screen and (max-width: 322px) {
+  .logo svg {
+    width: 210px; }
+  .form-content {
+    padding: 35px 30px 15px 30px;
+    margin: 0px; }
+  .modal-window.show .popup-wrap {
+    height: 520px;
+    margin: 25px auto; } }
 
 @keyframes catFromBox {
   0% {

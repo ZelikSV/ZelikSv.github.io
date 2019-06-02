@@ -18,23 +18,37 @@ const modalForm = $('.modal-form input');
 const modalBtnForm = $('.modal-btn-form');
 const mainBtnForm = $('.main-btn-form');
 const presentBtn = $('.take-present-btn');
+const mainWidth = $(document).width();
+
+if (mainWidth < 450) {
+  $(window).on('scroll', function() {
+    const scroll_pos = $(window).scrollTop() + $(window).height();
+    const box_pos = $('.cat-subscription-img').offset().top + $('.cat-subscription-img').height();
+
+    if (scroll_pos > box_pos) {
+      $('.cat-subscription-img').addClass('animate-cat');
+      $('.cat-from-box').addClass('animate-cat');
+    }
+  });
+}
+
 
 new WOW().init();
 
 presentBtn.hover(
-function(){
-  $('.cat-subscription-img').addClass('animate-cat');
-  $('.cat-from-box').addClass('animate-cat');
-},
-function(){
-  $('.cat-subscription-img').removeClass('animate-cat');
-  $('.cat-from-box').removeClass('animate-cat');
-});
+  function() {
+    $('.cat-subscription-img').addClass('animate-cat');
+    $('.cat-from-box').addClass('animate-cat');
+  },
+  function() {
+    $('.cat-subscription-img').removeClass('animate-cat');
+    $('.cat-from-box').removeClass('animate-cat');
+  });
 
 
-$("[href^='#']").click(function() {
-  var href = $(this).attr("href");
-  $("html, body").animate({ scrollTop: $(href).offset().top - 100 + 'px'}, 1000);
+$('[href^=\'#\']').click(function() {
+  let href = $(this).attr('href');
+  $('html, body').animate({ scrollTop: `${$(href).offset().top - 100  }px` }, 1000);
   return false;
 });
 
@@ -114,12 +128,12 @@ mainForm.on('input', checkInputFields);
 modalForm.on('input', checkInputFieldsModal);
 
 
-function openModalWindow(){
+function openModalWindow() {
   $('.modal-window').addClass('show');
   return false;
-};
+}
 
-function closeModal(){
+function closeModal() {
   $('.modal-window').removeClass('show');
 }
 
