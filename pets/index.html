@@ -965,23 +965,27 @@
                 fill="#EEECE8" />
             </g>
           </svg>
-          <form action="send.php" method="post" id="send_comment" class="form-content main-form">
-              <svg width="81" height="77" viewBox="0 0 81 77" fill="none" class="hand-cat-form">
-                  <path d="M72.0591 46.8978C69.6892 51.2864 66.162 54.9907 62.6896 58.3842C39.9227 80.6476 13.1767 70.1719 7.14698 38.193C6.2635 33.2317 5.92685 27.886 7.57682 23.0503C10.6671 13.6624 20.3459 7.6771 30.0333 6.17876C54.0195 2.39199 88.4931 16.1505 72.0591 46.8978Z" fill="#EEECE8"/>
-                  </svg>                  
+          <form action="send.php" method="POST" id="send_comment" class="form-content main-form">
+            <svg width="81" height="77" viewBox="0 0 81 77" fill="none" class="hand-cat-form">
+              <path d="M72.0591 46.8978C69.6892 51.2864 66.162 54.9907 62.6896 58.3842C39.9227 80.6476 13.1767 70.1719 7.14698 38.193C6.2635 33.2317 5.92685 27.886 7.57682 23.0503C10.6671 13.6624 20.3459 7.6771 30.0333 6.17876C54.0195 2.39199 88.4931 16.1505 72.0591 46.8978Z" fill="#EEECE8"/>
+              </svg>                               
             <h2>Получить Premium!</h2>
             <p>Оставьте контакты и мы обязательно свяжемся с вами когда запустим наш проект!</p>
             <label>
-              <input type="text" name="name" placeholder="Имя">
+              <p class="placeholder">Имя</p>
+              <input type="text" name="name">
             </label>
             <label>
-              <input type="text" name="phone" placeholder="Телефон">
+              <p class="placeholder">Телефон</p>
+              <input type="text" name="phone">
             </label>
             <label>
-              <input type="email" name="email" placeholder="Email">
+              <p class="placeholder">Email</p>
+              <input type="email" name="email">
             </label>
             <label>
-              <input type="text" name="kind" placeholder="Какую породу кошек разводите?">
+              <p class="placeholder">Какую породу кошек разводите?</p>
+              <input type="text" name="kind">
             </label>
             <button class="form-btn disabled-btn-form main-btn-form">Отправить</button>
           </form>
@@ -1121,20 +1125,27 @@
                 fill="#EEECE8" />
             </g>
           </svg>
-          <form action="send.php" method="post" id="send_comment" class="form-content modal-form">
+          <form action="send.php" method="POST" id="send_comment" class="form-content modal-form">
+              <svg width="81" height="77" viewBox="0 0 81 77" fill="none" class="hand-cat-form">
+                  <path d="M72.0591 46.8978C69.6892 51.2864 66.162 54.9907 62.6896 58.3842C39.9227 80.6476 13.1767 70.1719 7.14698 38.193C6.2635 33.2317 5.92685 27.886 7.57682 23.0503C10.6671 13.6624 20.3459 7.6771 30.0333 6.17876C54.0195 2.39199 88.4931 16.1505 72.0591 46.8978Z" fill="#EEECE8"/>
+                  </svg> 
             <h2>Получить Premium!</h2>
             <p>Оставьте контакты и мы обязательно свяжемся с вами когда запустим наш проект!</p>
             <label>
-              <input type="text" name="name" placeholder="Имя">
+              <p class="placeholder">Имя</p>
+              <input type="text" name="name">
             </label>
             <label>
-              <input type="text" name="phone" placeholder="Телефон">
+              <p class="placeholder">Телефон</p>
+              <input type="text" name="phone">
             </label>
             <label>
-              <input type="email" name="email" placeholder="Email">
+              <p class="placeholder">Email</p>
+              <input type="email" name="email">
             </label>
             <label>
-              <input type="text" name="kind" placeholder="Какую породу кошек разводите?">
+              <p class="placeholder">Какую породу кошек разводите?</p>
+              <input type="text" name="kind">
             </label>
             <button class="form-btn disabled-btn-form modal-btn-form">Отправить</button>
           </form>

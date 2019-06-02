@@ -19,6 +19,7 @@ const modalBtnForm = $('.modal-btn-form');
 const mainBtnForm = $('.main-btn-form');
 const presentBtn = $('.take-present-btn');
 const mainWidth = $(document).width();
+const btnUp = $('.btn-top-wrap');
 
 if (mainWidth < 450) {
   $(window).on('scroll', function() {
@@ -47,13 +48,12 @@ presentBtn.hover(
 
 
 $('[href^=\'#\']').click(function() {
-  let href = $(this).attr('href');
-  $('html, body').animate({ scrollTop: `${$(href).offset().top - 100  }px` }, 1000);
+  const href = $(this).attr('href');
+  $('html, body').animate({ scrollTop: `${$(href).offset().top - 100}px` }, 1000);
   return false;
 });
 
 
-const btnUp = $('.btn-top-wrap');
 window.onscroll = function() {
   const scrollHeight = this.pageYOffset;
 
@@ -124,9 +124,31 @@ function checkInputFieldsModal() {
 
 checkInputFields();
 
+// Work with forms
 mainForm.on('input', checkInputFields);
 modalForm.on('input', checkInputFieldsModal);
 
+mainForm.focusin(function() {
+  $(this).siblings()
+.addClass('focus');
+});
+mainForm.focusout(function() {
+  if ($(this).val() === '') {
+    $(this).siblings()
+.removeClass('focus');
+  }
+});
+
+modalForm.focusin(function() {
+  $(this).siblings()
+.addClass('focus');
+});
+modalForm.focusout(function() {
+  if ($(this).val() === '') {
+    $(this).siblings()
+.removeClass('focus');
+  }
+});
 
 function openModalWindow() {
   $('.modal-window').addClass('show');
