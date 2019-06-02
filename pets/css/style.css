@@ -982,22 +982,41 @@ body {
     height: 580px; } }
 
 @media only screen and (max-width: 375px) {
+  .banner-content {
+    transform: translate(1%, 45%); }
+  .banner-content-list li p {
+    font-size: 13px; }
   .mobile-header-btn {
     width: 35px;
     height: 32px; }
     .mobile-header-btn svg {
       width: 21px; }
+  .subscription-card-premium .subscription-card-img-title {
+    width: 270px; }
+  .form-content {
+    width: 90%;
+    padding: 45px 5px 5px 5px;
+    margin: 0px auto; }
+    .form-content label {
+      width: 100%; }
+  .main-form {
+    padding: 45px 5px 30px 5px; }
+  .modal-window.show .popup-wrap {
+    height: 560px; }
   .img-part-benefits svg {
     transform: scale(1.4); }
   .question-icon:hover .message-window.long-item {
-    transform: translate(-82%, 0) scale(1); } }
+    transform: translate(-82%, 0) scale(1); }
+  .subscription {
+    margin-bottom: 45px; }
+  .text-part-benefits-list-title svg {
+    min-width: 22px; }
+  .footer {
+    padding: 20px 5px; } }
 
 @media only screen and (max-width: 322px) {
   .logo svg {
     width: 210px; }
-  .form-content {
-    padding: 35px 30px 15px 30px;
-    margin: 0px; }
   .modal-window.show .popup-wrap {
     height: 520px;
     margin: 25px auto; } }
