@@ -13,17 +13,31 @@ c[b].top+r)/(c[b].height+r),c[b].speed);var e=d.y-c[b].baseY,g=d.x-c[b].baseX;nu
 "px) "+c[b].transform}a.options.callback(d)};a.destroy=function(){for(var d=0;d<a.elems.length;d++)a.elems[d].style.cssText=c[d].style;u||(window.removeEventListener("resize",w),u=!0);C(q);q=null};w();A();a.refresh=w;return a}console.warn("Rellax: The elements you're trying to select don't exist.")};return n});
 
 const rellax = new Rellax('.rellax-cat-header');
+const mainForm = $('.main-form input');
+const modalForm = $('.modal-form input');
+const modalBtnForm = $('.modal-btn-form');
+const mainBtnForm = $('.main-btn-form');
+const presentBtn = $('.take-present-btn');
+
 new WOW().init();
 
-$(window).on('scroll', function() {
-  const scroll_pos = $(window).scrollTop() + $(window).height();
-  const box_pos = $('.cat-subscription-img').offset().top + $('.cat-subscription-img').height();
-
-  if (scroll_pos > box_pos) {
-    $('.cat-subscription-img').addClass('animate-cat');
-    $('.cat-from-box').addClass('animate-cat');
-  }
+presentBtn.hover(
+function(){
+  $('.cat-subscription-img').addClass('animate-cat');
+  $('.cat-from-box').addClass('animate-cat');
+},
+function(){
+  $('.cat-subscription-img').removeClass('animate-cat');
+  $('.cat-from-box').removeClass('animate-cat');
 });
+
+
+$("[href^='#']").click(function() {
+  var href = $(this).attr("href");
+  $("html, body").animate({ scrollTop: $(href).offset().top - 100 + 'px'}, 1000);
+  return false;
+});
+
 
 const btnUp = $('.btn-top-wrap');
 window.onscroll = function() {
@@ -35,11 +49,6 @@ window.onscroll = function() {
     btnUp.removeClass('show-up');
   }
 };
-
-btnUp.on('click', function() {
-  $('html, body').animate({ scrollTop: 0 }, 500);
-  return false;
-});
 
 $(document).ready(function() {
   $('#send_comment').submit(function() {
@@ -75,20 +84,35 @@ $('.send-form').click(function() {
 });
 
 function checkInputFields() {
-  const inputsValue = $('.form-content input').val();
+  const inputsValue = mainForm.val();
 
   if (inputsValue === '') {
-    $('.form-btn').attr('disabled', true);
-    $('.form-btn').addClass('disabled-btn-form');
+    mainBtnForm.attr('disabled', true);
+    mainBtnForm.addClass('disabled-btn-form');
   } else {
-    $('.form-btn').attr('disabled', false);
-    $('.form-btn').removeClass('disabled-btn-form');
+    mainBtnForm.attr('disabled', false);
+    mainBtnForm.removeClass('disabled-btn-form');
+  }
+}
+
+
+function checkInputFieldsModal() {
+  const inputsValue = modalForm.val();
+
+  if (inputsValue === '') {
+    modalBtnForm.attr('disabled', true);
+    modalBtnForm.addClass('disabled-btn-form');
+  } else {
+    modalBtnForm.attr('disabled', false);
+    modalBtnForm.removeClass('disabled-btn-form');
   }
 }
 
 checkInputFields();
 
-$('.form-content input').on('input', checkInputFields);
+mainForm.on('input', checkInputFields);
+modalForm.on('input', checkInputFieldsModal);
+
 
 function openModalWindow(){
   $('.modal-window').addClass('show');
