@@ -193,19 +193,22 @@ body {
 .banner-bg {
   width: 100%;
   height: auto;
-  transform: translateY(1%); }
+  transform: translateY(1%);
+  animation: preloading 2s linear; }
 
 .cat-fly {
   position: absolute;
   top: 30%;
-  left: 50%; }
+  left: 50%;
+  animation: preloading 2s linear; }
 
 .banner-content {
   position: absolute;
   top: 50%;
   left: 25%;
   transform: translate(-50%, -85%);
-  z-index: 4; }
+  z-index: 4;
+  animation: preloading 2s linear; }
   .banner-content h2 {
     font-family: "Montserrat";
     font-weight: bold;
@@ -244,7 +247,8 @@ body {
   animation: mobileBtn 0.7s linear infinite; }
 
 .benefits {
-  padding-top: 110px; }
+  padding-top: 110px;
+  animation: preloading 2s linear; }
   .benefits .container {
     display: flex;
     flex-wrap: wrap;
@@ -659,6 +663,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    .footer .footer-logo-wrap .footer-img {
+      cursor: pointer;
+      transition: .3s linear; }
+      .footer .footer-logo-wrap .footer-img:hover path {
+        fill: #008d96; }
 
 .btn-top-wrap {
   opacity: 0;
@@ -1054,3 +1063,17 @@ body {
     transform: translate(-50%, 10%); }
   100% {
     transform: translate(-50%, 0%); } }
+
+@keyframes preloading {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 0.5; }
+  40% {
+    opacity: 0; }
+  60% {
+    opacity: 0.5; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
