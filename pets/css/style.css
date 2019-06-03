@@ -193,22 +193,19 @@ body {
 .banner-bg {
   width: 100%;
   height: auto;
-  transform: translateY(1%);
-  animation: preloading 2s linear; }
+  transform: translateY(1%); }
 
 .cat-fly {
   position: absolute;
   top: 30%;
-  left: 50%;
-  animation: preloading 2s linear; }
+  left: 50%; }
 
 .banner-content {
   position: absolute;
   top: 50%;
   left: 25%;
   transform: translate(-50%, -85%);
-  z-index: 4;
-  animation: preloading 2s linear; }
+  z-index: 4; }
   .banner-content h2 {
     font-family: "Montserrat";
     font-weight: bold;
@@ -528,7 +525,7 @@ body {
 
 .form-content {
   width: 380px;
-  padding: 70px 30px 55px 30px;
+  padding: 60px 30px 55px 30px;
   margin: 0px;
   margin-left: 155px;
   position: relative;
@@ -702,7 +699,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.6);
+  background: #E5E5E5;
   z-index: 999999999;
   transform: scale(1);
   transition: 0.3s linear; }
@@ -713,7 +710,6 @@ body {
     border-radius: 5px;
     background: #fff;
     position: relative;
-    box-shadow: 1px 1px 10px 0px #000;
     transform: scale(1);
     overflow: hidden; }
   .modal-window.show .close-btn {
@@ -829,7 +825,7 @@ body {
   .banner-bg {
     width: 160%;
     height: auto;
-    transform: translate(-25%, 0); }
+    transform: translate(-25%, 1%); }
   .benefits .container {
     flex-direction: column;
     align-items: center; }
@@ -902,7 +898,13 @@ body {
   .benefits {
     margin-bottom: 31px; }
   .subscription-title {
-    margin-left: 20px; } }
+    margin-left: 20px; }
+  .modal-window .form-container {
+    width: 768px;
+    transform: translateX(-2%);
+    overflow: inherit; }
+  .modal-window .clew-cat {
+    right: 90px; } }
 
 @media only screen and (max-width: 767px) {
   .container {
@@ -982,10 +984,16 @@ body {
     bottom: 50px;
     right: 15px; } }
 
+@media only screen and (max-width: 500px) {
+  .banner {
+    height: 690px; } }
+
 @media only screen and (max-width: 450px) {
   .banner-bg {
     width: 340%;
-    transform: translate(-27%, -25%); }
+    transform: translate(-27%, -33%); }
+  .banner {
+    height: 660px; }
   .img-part-benefits svg {
     height: 155px; }
   .footer {
@@ -996,18 +1004,37 @@ body {
 
 @media only screen and (max-width: 415px) {
   .banner-bg {
-    transform: translate(-27%, -7%); } }
+    transform: translate(-27%, -33%); }
+  .banner {
+    height: 615px; } }
 
 @media only screen and (max-width: 375px) {
   .banner-content {
-    transform: translate(1%, 45%); }
+    transform: translate(3%, 40%); }
+  .banner-content h2 {
+    font-size: 30px;
+    line-height: 40px;
+    width: 85%;
+    margin-bottom: 25px; }
+  .banner {
+    height: 600px; }
+  .banner-bg {
+    transform: translate(-29%, -30%); }
   .banner-content-list li p {
-    font-size: 13px; }
+    font-size: 13px;
+    line-height: 22px; }
   .mobile-header-btn {
     width: 35px;
     height: 32px; }
     .mobile-header-btn svg {
       width: 21px; }
+  .text-part-benefits h2 {
+    font-size: 30px;
+    margin-left: 0;
+    width: 95%;
+    margin-bottom: 30px; }
+  .img-part-benefits {
+    margin: 30px 0; }
   .subscription-card-premium .subscription-card-img-title {
     width: 270px; }
   .form-content {
@@ -1021,7 +1048,7 @@ body {
   .modal-window.show .popup-wrap {
     height: 560px; }
   .img-part-benefits svg {
-    transform: scale(1.4); }
+    transform: scale(1.5); }
   .question-icon:hover .message-window.long-item {
     transform: translate(-82%, 0) scale(1); }
   .subscription {
@@ -1030,6 +1057,10 @@ body {
     min-width: 22px; }
   .footer {
     padding: 20px 5px; } }
+
+@media only screen and (max-width: 360px) {
+  .banner {
+    height: 580px; } }
 
 @media only screen and (max-width: 322px) {
   .logo svg {
@@ -1063,17 +1094,3 @@ body {
     transform: translate(-50%, 10%); }
   100% {
     transform: translate(-50%, 0%); } }
-
-@keyframes preloading {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 0.5; }
-  40% {
-    opacity: 0; }
-  60% {
-    opacity: 0.5; }
-  80% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
